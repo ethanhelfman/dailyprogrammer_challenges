@@ -60,4 +60,35 @@ public class Easy {
 			System.out.println("Generation: " + cnt + " | Fitness: " + fitness + " | Phrase: " + org);
 		}
 	}
+	
+	public static void elementValid() {
+        Scanner kb = new Scanner(System.in);    
+        System.out.print("Enter element name: ");
+        String elname = kb.next();
+        elname = elname.toLowerCase();
+        System.out.print("Enter element symbol: ");
+        String elsym = kb.next();
+        elsym = elsym.toLowerCase();
+        int posun = elname.indexOf(elsym.substring(0,1));
+        elname = elname.substring(posun + 1);
+        int posdos = elname.indexOf(elsym.substring(1));
+        if(posdos == -1 || posun == -1) {
+            System.out.println("Not valid name");
+        }
+        else {
+            System.out.println("Valid");
+        }
+     }
+
+     public static void elementCombinations() {
+        Scanner kb = new Scanner(System.in);
+        System.out.print("Enter element: ");     
+        String name = kb.next();
+        int cnt = 0;
+        while(name.length() > 1) {
+            cnt += name.length() - 1;
+            name = name.substring(0, name.length());
+        }
+     }
+}
 }
